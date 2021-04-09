@@ -1,25 +1,16 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
+{% extends 'layout.html.twig' %}
 
-    <body>
-        {% block content %}
+{% block content %}
 
-            {% for product in products  %}
-                {{product}}
+     {% for product in products  %}
+           {{product}}
 
-                {% if (loop.index %3) == 0 %}
-                    <br/>
-                {% endif %}
-            {% endfor %}
+         {% if (loop.index %3) == 0 %}
+                <br/>
+         {% endif %}
+      {% endfor %}
 
         {{ dump(products) }}
-    {% endblock %}
-    </body>
-</html>
+        
+ {% endblock %}
+
